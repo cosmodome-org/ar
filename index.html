@@ -49,23 +49,20 @@ src="https://cdn.jsdelivr.net/gh/aframevr/aframe@3f0df33946cf12e3d552b3b4e500dd5
 
 		<!-- <a-entity scale="0.008 0.008 0.008" position='0 0 -2' gltf-model="#astronaut" animation="property: rotation; to: 0 220 -45; loop: true; dur: 5000; easing: easeInOutSine; dir: alternate" holo-material ></a-entity> -->
 		<!-- <a-entity scale="0.1 0.1 0.1" position='0 0 -2' gltf-model="#dragon" animation="property: rotation; to: 0 220 -45; loop: true; dur: 5000; easing: easeInOutSine; dir: alternate" holo-material></a-entity> -->
-		<a-entity scale="0.05 0.05 0.05" position='0 0 -2' gltf-model="#hubble"
-			animation="property: rotation; to: 20 220 -45; loop: true; dur: 5000; easing: easeInOutSine; dir: alternate"
-			holo-material></a-entity>
+		<!-- <a-entity scale="0.05 0.05 0.05" position='0 0 -2' gltf-model="#hubble" animation="property: rotation; to: 20 220 -45; loop: true; dur: 5000; easing: easeInOutSine; dir: alternate" holo-material></a-entity> -->
 		<!-- <a-entity scale="0.02 0.02 0.02" position='0 0 -2' gltf-model="#iss" animation="property: rotation; to: 0 220 -45; loop: true; dur: 5000; easing: easeInOutSine; dir: alternate" holo-material></a-entity> -->
 		<!-- <a-entity scale="0.3 0.3 0.3" position='0 0 -2' gltf-model="#starliner" animation="property: rotation; to: 0 220 -45; loop: true; dur: 5000; easing: easeInOutSine; dir: alternate" holo-material>	</a-entity> -->
 
 
 
-		<a-marker type='pattern' url='markers/pattern-satellite.patt' smooth='true'>
-			<a-entity scale="0.5 0.5 0.5" position='0 0.5 0' gltf-model="#hubble"
-				material="envMap:#reflection;"></a-entity>></a-entity>
-			<!-- <a-box depth="1" height="1" width="1" position='0 0.5 0' material='opacity: 0.5; side:double; color:blue;'></a-box> -->
+		<a-marker type='pattern' url='markers/pattern-starliner.patt' smooth='true'>
+			<a-entity scale="0.3 0.3 0.3" position='0 0 -2' gltf-model="#starliner" animation="property: rotation; to: 0 220 -45; loop: true; dur: 5000; easing: easeInOutSine; dir: alternate" holo-material>	</a-entity>
+			<a-box depth="1" height="1" width="1" position='0 0.5 0' material='opacity: 0.5; side:double; color:blue;'></a-box>
 		</a-marker>
 
 		<a-marker type='pattern' url='markers/pattern-astronaut75.patt' smooth='true'>
 			<a-entity scale="0.008 0.008 0.008" position='0 0 -2' gltf-model="#astronaut" animation="property: rotation; to: 0 360 0; loop: true; dur: 5000; easing: linear;" holo-material ></a-entity>
-			<!-- <a-box depth="1" height="1" width="1" position='0 1 0' material='opacity: 0.5; side:double; color:red;'></a-box> -->
+			<a-box depth="1" height="1" width="1" position='0 1 0' material='opacity: 0.5; side:double; color:red;'></a-box>
 		</a-marker>
 		<!-- 
 		<a-marker type='pattern' url='markers/pattern-meteor.patt' smooth='true'>
