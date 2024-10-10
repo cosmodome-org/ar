@@ -1,0 +1,29 @@
+
+.visible{
+    z-index: 1;
+}
+
+.logo{
+
+}
+
+.language{
+
+}
+
+.bottom{
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    height: 20vh;
+    background-color: red;
+
+}
+
+.title{
+
+}
+
+.text{
+
+}
