@@ -1,30 +1,30 @@
 <!DOCTYPE html>
+<head>
+	<meta charset="utf8">
+  </head>
 <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@3f0df33946cf12e3d552b3b4e500dd5b8ff6f692/dist/aframe-master.min.js"></script>
 <!-- <script src="./aframe142.min.js"></script> -->
-<script src="aframe-ar.js"></script>
+<script src="lib/aframe-ar.js"></script>
 <!-- <script src="aframe-extra.min.js"></script> -->
-<script type="module" src="holo-material.js"></script>
-<script type="module" src="color-shift.js"></script>
+<script type="module" src="component/holo-material.js"></script>
+<script type="module" src="component/register-event.js"></script>
+<!-- <script type="module" src="color-shift.js"></script> -->
 <!-- <script type="module" src="cube-env-map.js"></script> -->
 <!-- <script src="post-processing.min.js"></script> -->
 <!-- <script src="aframe-effects.js"></script> -->
 <link rel="stylesheet" href="style.css">
 
 <body style='margin : 0px; overflow: hidden; font-family: Monospace;'>
-	<div style='position: fixed; top: 10px; width:100%; text-align: center; z-index: 1;'>
-		<a href="https://github.com/AR-js-org/AR.js/" target="_blank">AR.js</a> - example for a-frame
-		<br />
-		Contact me any time at <a href='https://twitter.com/nicolocarp' target='_blank'>@nicolocarp</a>
+
+	<div class="visible">
+		<div class="logo "><img src="images/logo.png"></div>
+		<div class="language ">EN</div>
+		<div id="target"><img src="images/target.png" alt="" srcset=""></div>
+		<div id="bottom">
+			<div id="title"></div>
+			<div id="text">Visez le pictogramme sur la vidéo pour faire apparaître l'objet en version holographique sur votre téléphone. </div>
+		</div>
 	</div>
-
-
-	<div class="logo visible">LOGO</div>
-	<div class="language visible">EN</div>
-	<div class="bottom visible">
-		<div class="title visible">ISS</div>
-		<div class="text visible">Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum </div>
-	</div>
-
 	<a-scene id='scene' embedded arjs='sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3;' renderer='precision: high;' color-shift>
 
 
@@ -56,49 +56,45 @@
 		<!-- <a-entity  position='0 0 -2' rotation="-90 0 0">
 			<a-entity scale="0.008 0.008 0.008" position='0 0 0' gltf-model="#astronaut" animation="property: rotation; to: 0 360 0; loop: true; dur: 5000; easing: linear;" holo-material></a-entity>
 		</a-entity> -->
-		
+
 		<!-- <a-entity scale="0.008 0.008 0.008" position='0 0 -2' gltf-model="#astronaut" animation="property: rotation; to: 0 220 -45; loop: true; dur: 5000; easing: easeInOutSine; dir: alternate" holo-material ></a-entity> -->
 		<!-- <a-entity scale="0.1 0.1 0.1" position='0 0 -2' gltf-model="#dragon" animation="property: rotation; to: 0 220 -45; loop: true; dur: 5000; easing: easeInOutSine; dir: alternate" holo-material></a-entity> -->
 		<!-- <a-entity scale="0.05 0.05 0.05" position='0 0 -2' gltf-model="#hubble" animation="property: rotation; to: 20 220 -45; loop: true; dur: 5000; easing: easeInOutSine; dir: alternate" holo-material></a-entity> -->
 		<!-- <a-entity scale="0.02 0.02 0.02" position='0 0 -2' gltf-model="#iss" animation="property: rotation; to: 0 220 -45; loop: true; dur: 5000; easing: easeInOutSine; dir: alternate" holo-material></a-entity> -->
 		<!-- <a-entity scale="0.3 0.3 0.3" position='0 0 -2' gltf-model="#starliner" animation="property: rotation; to: 0 220 -45; loop: true; dur: 5000; easing: easeInOutSine; dir: alternate" holo-material>	</a-entity> -->
-		
-		
-		<a-marker type='pattern' url='markers/pattern-astronaut.patt' smooth='true'>
+
+
+		<a-marker id="marker-astronaut" type='pattern' url='markers/pattern-astronaut.patt' smooth='true' register-events>
 			<a-entity scale="0.7 0.7 0.7" position='0 1 0' rotation="-90 0 0">
 				<a-entity scale="0.08 0.08 0.08" position='0 0 0' gltf-model="#astronaut" animation="property: rotation; to: 0 360 0; loop: true; dur: 5000; easing: linear;" holo-material></a-entity>
 			</a-entity>
 		</a-marker>
-		
-		<a-marker type='pattern' url='markers/pattern-starliner.patt' smooth='true'>
-			<a-entity scale="0.7 0.7 0.7" position='0 1 0'  rotation="-125 0 0">
+
+		<a-marker id="marker-starliner" type='pattern' url='markers/pattern-starliner.patt' smooth='true' register-events>
+			<a-entity scale="0.7 0.7 0.7" position='0 1 0' rotation="-125 0 0">
 				<a-entity scale="3 3 3" position='0 0 0' gltf-model="#starliner" animation="property: rotation; to: 0 220 -45; loop: true; dur: 5000; easing: easeInOutSine; dir: alternate" holo-material> </a-entity>
 			</a-entity>
 		</a-marker>
-		
-		<a-marker type='pattern' url='markers/pattern-dragon.patt' smooth='true'>
+
+		<a-marker id="marker-dragon" type='pattern' url='markers/pattern-dragon.patt' smooth='true' register-events>
 			<a-entity scale="0.7 0.7 0.7" position='0 1 0' rotation="-90 0 0">
 				<a-entity scale="1 1 1" position='0 0 0' gltf-model="#dragon" animation="property: rotation; to: 0 360 0; loop: true; dur: 5000; easing: linear" holo-material></a-entity>
 			</a-entity>
 		</a-marker>
-		
-		<a-marker type='pattern' url='markers/pattern-hubble.patt' smooth='true'>
+
+		<a-marker id="marker-hubble" type='pattern' url='markers/pattern-hubble.patt' smooth='true' register-events>
 			<a-entity scale="0.7 0.7 0.7" position='0 1 0' rotation="-125 0 0">
 				<a-entity scale="0.5 0.5 0.5" position='0 0 0' gltf-model="#hubble" animation="property: rotation; to: 0 359 0; loop: true; dur: 5000; easing: linear" holo-material></a-entity>
 			</a-entity>
 		</a-marker>
-		
-		<a-marker type='pattern' url='markers/pattern-iss.patt' smooth='true'>
+
+		<a-marker id="marker-iss" type='pattern' url='markers/pattern-iss.patt' smooth='true' register-events>
 			<a-entity scale="0.7 0.7 0.7" position='0 1 0' rotation="-125 0 0">
 				<a-entity scale="0.2 0.2 0.2" position='0 0 0' gltf-model="#iss" animation="property: rotation; to: 0 360 0; loop: true; dur: 5000; easing: linear" holo-material></a-entity>
 			</a-entity>
 		</a-marker>
-		
-		<a-marker type='pattern' url='markers/pattern-starliner.patt' smooth='true'>
-			<a-entity scale="0.7 0.7 0.7" position='0 1 0' rotation="-100 0 0">
-				<a-entity scale="3 3 3" position='0 0 0' gltf-model="#starliner" animation="property: rotation; to: 0 360 0; loop: true; dur: 5000; easing: linear" holo-material>	</a-entity>
-			</a-entity>
-		</a-marker>
+
+
 
 
 

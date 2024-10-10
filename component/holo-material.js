@@ -1,4 +1,4 @@
-import HolographicMaterial from './HolographicMaterialVanilla.js'
+import HolographicMaterial from '../lib/HolographicMaterialVanilla.js'
 AFRAME.registerComponent('holo-material', {
     schema: {
     },
