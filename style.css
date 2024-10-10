@@ -37,7 +37,10 @@
     padding: 1rem;
     position: fixed;
     bottom: 0;
-    width: 100vw;
+    left: 0;
+    right: 0;
+    margin: 0;
+    /* width: 100%; */
     height: auto;
     background-color: #002A3D;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
