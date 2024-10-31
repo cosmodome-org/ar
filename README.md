@@ -14,8 +14,8 @@ Open the link or scan the QR, this will start the experience in the browser, no 
 https://cosmodome-org.github.io/ar/
 
 
-![image info](./QR.png width=200)
-![image info](./markers/pattern-astronaut.png =250x250)
+![image info](./QR.png)
+![image info](./markers/pattern-astronaut.png)
 ![image info](./markers/pattern-dragon.png)
 ![image info](./markers/pattern-hubble.png)
 ![image info](./markers/pattern-iss.png)
