@@ -50,11 +50,12 @@
 #title {
     font-family: TTSuper;
     color: #02ADE0;
-    font-size: 3rem;
+    font-size: 2rem;
 }
 
 #text {
-    padding: 1rem;
+    font-size: 0.6rem;
+    padding: 0rem;
     color: white;
 }
 
