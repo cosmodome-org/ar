@@ -1,7 +1,8 @@
 <!DOCTYPE html>
+
 <head>
 	<meta charset="utf8">
-  </head>
+</head>
 <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@3f0df33946cf12e3d552b3b4e500dd5b8ff6f692/dist/aframe-master.min.js"></script>
 <!-- <script src="./aframe142.min.js"></script> -->
 <script src="lib/aframe-ar.js"></script>
@@ -18,11 +19,26 @@
 
 	<div class="visible">
 		<div class="logo"><img src="images/logo.png"></div>
-		<div id="language">EN</div>
-		<div id="target"><img src="images/target.png" alt="" srcset=""></div>
+		<div id="language"><u>FR</u>-EN</div>
+		<script>
+			document.getElementById('language').addEventListener('click', function () {
+				console.log('tapped')
+				changeInstr();
+				if (document.getElementById('language').innerHTML == 'FR-<u>EN</u>') document.getElementById('language').innerHTML = '<u>FR</u>-EN';
+				else if (document.getElementById('language').innerHTML == '<u>FR</u>-EN') document.getElementById('language').innerHTML = 'FR-<u>EN</u>';
+			}, false);
+		</script>
+		<div id="target"><img src="images/target.gif" alt="" srcset=""></div>
 		<div id="bottom">
 			<div id="title"></div>
-			<div id="text">Visez le pictogramme sur la vidéo pour faire apparaître l'objet en version holographique sur votre téléphone. </div>
+			<div id="text"></div>
+			<script>
+				changeInstr();
+				function changeInstr() {
+					if (document.getElementById('language').innerHTML == '<u>FR</u>-EN') document.getElementById('text').innerText = "Visez le pictogramme sur la vidéo pour faire apparaître l'objet en version holographique sur votre téléphone."
+					if (document.getElementById('language').innerHTML == 'FR-<u>EN</u>') document.getElementById('text').innerText = "Aim your phone at the pictogram on the video to make a holographic version of the object appear."
+				}
+			</script>
 		</div>
 	</div>
 	<!-- <script>console.log(document.getElementById('language').innerText)</script> -->

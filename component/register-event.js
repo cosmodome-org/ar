@@ -1,7 +1,10 @@
 AFRAME.registerComponent('register-events', {
     init: function () {
         var marker = this.el;
-        var language = document.getElementById('language').innerText;
+        var language;
+        if(document.getElementById('language').innerHTML == '<u>FR</u>-EN') language = 'FR';
+        if(document.getElementById('language').innerHTML == 'FR-<u>EN</u>') language = 'EN';
+        // var language = document.getElementById('language').innerText;
         marker.addEventListener('markerFound', function () {
             var markerId = marker.id;
             console.log('markerFound', markerId);
