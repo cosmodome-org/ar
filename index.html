@@ -17,14 +17,15 @@
 <body style='margin : 0px; overflow: hidden; font-family: Monospace;'>
 
 	<div class="visible">
-		<div class="logo "><img src="images/logo.png"></div>
-		<div class="language ">EN</div>
+		<div class="logo"><img src="images/logo.png"></div>
+		<div id="language">EN</div>
 		<div id="target"><img src="images/target.png" alt="" srcset=""></div>
 		<div id="bottom">
 			<div id="title"></div>
 			<div id="text">Visez le pictogramme sur la vidéo pour faire apparaître l'objet en version holographique sur votre téléphone. </div>
 		</div>
 	</div>
+	<!-- <script>console.log(document.getElementById('language').innerText)</script> -->
 	<a-scene id='scene' embedded arjs='sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3;' renderer='precision: high;' color-shift>
 
 
