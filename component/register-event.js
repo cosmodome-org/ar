@@ -1,15 +1,10 @@
 AFRAME.registerComponent('register-events', {
-    posToString: function (pos) {
-        return pos.x.toFixed(2) + " " + pos.y.toFixed(2) + " " + pos.z.toFixed(2);
-    },
     init: function () {
-        this.localpos = new THREE.Vector3();
-        this.worldpos = new THREE.Vector3();
         console.log('register-events');
         var marker = this.el;
         var language;
         function show(id, visible) {
-            document.getElementById(id).setAttribute('visible', visible);
+            document.getElementById(id).setAttribute('visible', visible) ;
         }
         function title(text) {
             document.getElementById('title').innerHTML = text;
@@ -25,17 +20,8 @@ AFRAME.registerComponent('register-events', {
             show('obj-iss', false);
         }
         hideAll();
-
+       
         marker.addEventListener('markerFound', function () {
-            //
-            this.localpos.copy(this.el.getAttribute("position"))
-            this.el.getObject3D("mesh").getWorldPosition(this.worldpos)
-            document.getElementById('all').setAttribute('position', this.posToString(this.worldpos))
-            msg += "marker local position:" + this.posToString(this.localpos)
-            msg += "<br>"
-            msg += "marker world position:" + this.posToString(this.worldpos)
-            console.log(msg)
-            //
             if (document.getElementById('language').innerHTML == '<u>FR</u>-EN') language = 'FR';
             else if (document.getElementById('language').innerHTML == 'FR-<u>EN</u>') language = 'EN';
             var markerId = marker.id;
@@ -44,7 +30,7 @@ AFRAME.registerComponent('register-events', {
             document.getElementById('target').style.display = 'none';
             document.getElementById('bottom').style.display = 'block';
             if (markerId == 'marker-astronaut') {
-                hideAll();
+                hideAll();  
                 show('obj-astronaut', true);
                 if (language == 'FR') title('Astronaute');
                 else if (language == 'EN') title('Astronaut');
@@ -94,16 +80,6 @@ AFRAME.registerComponent('register-events', {
             document.getElementById('target').style.display = 'block';
             // TODO: Add your own code here to react to the marker being lost.
         });
-    },
-    tick: function () {
-        // this.localpos.copy(this.el.getAttribute("position"))
-        // this.el.getObject3D("mesh").getWorldPosition(this.worldpos)
-        // document.getElementById('all').setAttribute('position', this.posToString(this.worldpos))
-        // msg += "Sphere local position:" + this.posToString(this.localpos)
-        // msg += "<br>"
-        // msg += "Sphere world position:" + this.posToString(this.worldpos)
-        // console.log(msg)
-        // this.textEl.innerHTML = msg
     }
 });
 

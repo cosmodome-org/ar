@@ -6,7 +6,8 @@ AFRAME.registerComponent("sync-marker-pos", {
         this.textEl = document.querySelector("p")
     },
     posToString: function (pos) {
-        return pos.x.toFixed(2) + " " + pos.y.toFixed(2) + " " + pos.z.toFixed(2);
+        // return pos.x.toFixed(2) + " " + pos.y.toFixed(2) + " " + pos.z.toFixed(2);
+        return pos.x.toFixed(2) + " " + pos.y.toFixed(2) + " -3";
     },
     // called on each frame
     tick: function () {
