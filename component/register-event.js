@@ -1,4 +1,7 @@
 AFRAME.registerComponent('register-events', {
+    posToString: function (pos) {
+        return pos.x.toFixed(2) + " " + pos.y.toFixed(2) + " " + pos.z.toFixed(2);
+    },
     init: function () {
         this.localpos = new THREE.Vector3();
         this.worldpos = new THREE.Vector3();
@@ -91,9 +94,6 @@ AFRAME.registerComponent('register-events', {
             document.getElementById('target').style.display = 'block';
             // TODO: Add your own code here to react to the marker being lost.
         });
-    },
-    posToString: function (pos) {
-        return pos.x.toFixed(2) + " " + pos.y.toFixed(2) + " " + pos.z.toFixed(2);
     },
     tick: function () {
         // this.localpos.copy(this.el.getAttribute("position"))
