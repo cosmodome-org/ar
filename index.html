@@ -75,30 +75,30 @@
 		</a-assets>
 
 		<!-- world pos -->
-		<a-entity id="all" position='0 3 -10' rotation="90 0 0">
+		<a-entity id="all" position='0 0 0' rotation="90 0 0">
 
 			<!-- astronaut -->
-			<a-entity id="obj-astronaut" scale="0.7 0.7 0.7" position='0 1 0' rotation="-90 0 0">
+			<a-entity id="obj-astronaut" scale="0.7 0.7 0.7" position='0 0 0' rotation="-90 0 0">
 				<a-entity scale="0.08 0.08 0.08" position='0 0 0' gltf-model="#astronaut" animation="property: rotation; to: 0 360 0; loop: true; dur: 5000; easing: linear;" holo-material></a-entity>
 			</a-entity>
 
 			<!-- syarliner -->
-			<a-entity id="obj-starliner" scale="0.7 0.7 0.7" position='0 1 0' rotation="-125 0 0">
+			<a-entity id="obj-starliner" scale="0.7 0.7 0.7" position='0 0 0' rotation="-125 0 0">
 				<a-entity scale="3 3 3" position='0 0 0' gltf-model="#starliner" animation="property: rotation; to: 0 220 -45; loop: true; dur: 5000; easing: easeInOutSine; dir: alternate" holo-material> </a-entity>
 			</a-entity>
 
 			<!-- dragon -->
-			<a-entity id="obj-dragon" scale="0.7 0.7 0.7" position='0 1 0' rotation="-90 0 0">
+			<a-entity id="obj-dragon" scale="0.7 0.7 0.7" position='0 0 0' rotation="-90 0 0">
 				<a-entity scale="1 1 1" position='0 0 0' gltf-model="#dragon" animation="property: rotation; to: 0 360 0; loop: true; dur: 5000; easing: linear" holo-material></a-entity>
 			</a-entity>
 
 			<!-- hubble -->
-			<a-entity id="obj-hubble" scale="0.7 0.7 0.7" position='0 1 0' rotation="-125 0 0">
+			<a-entity id="obj-hubble" scale="0.7 0.7 0.7" position='0 0 0' rotation="-125 0 0">
 				<a-entity scale="0.5 0.5 0.5" position='0 0 0' gltf-model="#hubble" animation="property: rotation; to: 0 359 0; loop: true; dur: 5000; easing: linear" holo-material></a-entity>
 			</a-entity>
 
 			<!-- iss -->
-			<a-entity id="obj-iss" scale="0.5 0.5 0.5" position='0 1 0' rotation="-125 0 0">
+			<a-entity id="obj-iss" scale="0.5 0.5 0.5" position='0 0 0' rotation="-125 0 0">
 				<a-entity scale="0.2 0.2 0.2" position='0 0 0' gltf-model="#iss" animation="property: rotation; to: 0 360 0; loop: true; dur: 5000; easing: linear" holo-material></a-entity>
 			</a-entity>
 
@@ -108,28 +108,28 @@
 
 		<!-- astronaut -->
 		<a-marker id="marker-astronaut" type='pattern' url='markers/pattern-astronaut.patt' smooth='true' register-events>
-			<a-box position="0 0 0" color="green" sync-marker-pos></a-box>
+			<a-box scale="0 0 0" position="0 0 0" color="green" sync-marker-pos></a-box>
 		</a-marker>
 
 
 		<!-- syarliner -->
 		<a-marker id="marker-starliner" type='pattern' url='markers/pattern-starliner.patt' smooth='true' register-events>
-			<a-box position="0 0 0" color="green" sync-marker-pos></a-box>
+			<a-box scale="0 0 0" position="0 0 0" color="green" sync-marker-pos></a-box>
 		</a-marker>
 
 		<!-- dragon -->
 		<a-marker id="marker-dragon" type='pattern' url='markers/pattern-dragon.patt' smooth='true' register-events>
-			<a-box position="0 0 0" color="green" sync-marker-pos></a-box>
+			<a-box scale="0 0 0" position="0 0 0" color="green" sync-marker-pos></a-box>
 		</a-marker>
 
 		<!-- hubble -->
 		<a-marker id="marker-hubble" type='pattern' url='markers/pattern-hubble.patt' smooth='true' register-events>
-			<a-box position="0 0 0" color="green" sync-marker-pos></a-box>
+			<a-box scale="0 0 0" position="0 0 0" color="green" sync-marker-pos></a-box>
 		</a-marker>
 
 		<!-- iss -->
 		<a-marker id="marker-iss" type='pattern' url='markers/pattern-iss.patt' smooth='true' register-events>
-			<a-box position="0 0 0" color="green" sync-marker-pos></a-box>
+			<a-box scale="0 0 0" position="0 0 0" color="green" sync-marker-pos></a-box>
 		</a-marker>
 
 
