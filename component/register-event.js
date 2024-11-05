@@ -26,7 +26,7 @@ AFRAME.registerComponent('register-events', {
             else if (document.getElementById('language').innerHTML == 'FR-<u>EN</u>') language = 'EN';
             var markerId = marker.id;
             console.log('markerFound', markerId);
-            console.log('language : ' + language);
+            console.log('language : ' + language);   
             document.getElementById('target').style.display = 'none';
             document.getElementById('bottom').style.display = 'block';
             if (markerId == 'marker-astronaut') {
@@ -77,7 +77,7 @@ AFRAME.registerComponent('register-events', {
             var markerId = marker.id;
             console.log('markerLost', markerId);
             // document.getElementById('bottom').style.display = 'none';
-            document.getElementById('target').style.display = 'block';
+            // document.getElementById('target').style.display = 'block';
             // TODO: Add your own code here to react to the marker being lost.
         });
     }
