@@ -1,5 +1,6 @@
 AFRAME.registerComponent("sync-marker-pos", {
     init: function () {
+        console.log('sync-marker-pos')
         this.localpos = new THREE.Vector3();
         this.worldpos = new THREE.Vector3();
         this.textEl = document.querySelector("p")
@@ -14,12 +15,13 @@ AFRAME.registerComponent("sync-marker-pos", {
         // this.el.getObject3D("mesh").position has the local position
         this.localpos.copy(this.el.getAttribute("position"))
         this.el.getObject3D("mesh").getWorldPosition(this.worldpos)
-        document.getElementById('all').setAttribute('position', posToString(this.worldpos))
+        document.getElementById('all').setAttribute('position', this.posToString(this.worldpos))
         // compose the displayed message
         let msg = "";
         msg += "Sphere local position:" + this.posToString(this.localpos)
         msg += "<br>"
         msg += "Sphere world position:" + this.posToString(this.worldpos)
-        this.textEl.innerHTML = msg
+        // console.log(msg)
+        // this.textEl.innerHTML = msg
     }
 })
