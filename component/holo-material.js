@@ -3,6 +3,7 @@ AFRAME.registerComponent('holo-material', {
     schema: {
     },
     init: function () {
+        console.log('holo-material')
         const loader = new THREE.GLTFLoader();
         const holographicMaterial = new HolographicMaterial();
         const holoMaterial1 = new HolographicMaterial({
