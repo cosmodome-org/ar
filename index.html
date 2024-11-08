@@ -85,32 +85,32 @@
 
 		
 		<!-- world pos -->
-		<a-entity id="all" position='0 5 20' rotation="90 0 0" animation="property: rotation; from:0 0 0; to: 0 359 0; loop: true; dur: 30000; easing: linear;">
+		<a-entity id="all" position='0 5 20' rotation="90 0 0" animation="property: rotation; from:0 0 0; to: 0 360 0; loop: true; dur: 30000; easing: linear;">
 			
-			<a-plane  position="0 5 -7" color="red" height="2" width="2" material="opacity:0.5; side:double"></a-plane>
+			<!-- <a-plane  position="0 5 -4" color="red" height="2" width="2" material="opacity:0.5; side:double"></a-plane> -->
 			<!-- astronaut -->
-			<a-entity id="obj-astronaut" position="0 5 -7" scale="0.7 0.7 0.7"  rotation="-90 0 0">
-				<a-entity scale="0.08 0.08 0.08"  gltf-model="#astronaut" animation="property: rotation; to: 0 360 0; loop: true; dur: 5000; easing: linear;" holo-material></a-entity>
+			<a-entity id="obj-astronaut" position="0 5 -4" scale="1 1 1"  rotation="-90 0 0">
+				<a-entity scale="0.08 0.08 0.08"  gltf-model="#astronaut" animation="property: rotation; to: 0 360 0; loop: true; dur: 15000; easing: linear;" holo-material></a-entity>
 			</a-entity>
 
 			<!-- syarliner -->
-			<a-entity id="obj-starliner" position="0 5 -7" scale="0.7 0.7 0.7"  rotation="-125 0 0">
-				<a-entity scale="3 3 3"  gltf-model="#starliner" animation="property: rotation; to: 0 220 -45; loop: true; dur: 5000; easing: easeInOutSine; dir: alternate" holo-material> </a-entity>
+			<a-entity id="obj-starliner" position="0 5 -4" scale="1 1 1"  rotation="-125 0 0">
+				<a-entity scale="3 3 3"  gltf-model="#starliner" animation="property: rotation; to: 0 220 -45; loop: true; dur: 15000; easing: easeInOutSine; dir: alternate" holo-material> </a-entity>
 			</a-entity>
 
 			<!-- dragon -->
-			<a-entity id="obj-dragon" position="0 5 -7" scale="0.7 0.7 0.7"  rotation="-90 0 0">
-				<a-entity scale="1 1 1"  gltf-model="#dragon" animation="property: rotation; to: 0 360 0; loop: true; dur: 5000; easing: linear" holo-material></a-entity>
+			<a-entity id="obj-dragon" position="0 5 -4" scale="1 1 1"  rotation="-90 0 0">
+				<a-entity scale="1 1 1"  gltf-model="#dragon" animation="property: rotation; to: 0 360 0; loop: true; dur: 15000; easing: linear" holo-material></a-entity>
 			</a-entity>
 
 			<!-- hubble -->
-			<a-entity id="obj-hubble" position="0 5 -7" scale="0.7 0.7 0.7"  rotation="-125 0 0">
-				<a-entity scale="0.5 0.5 0.5"  gltf-model="#hubble" animation="property: rotation; to: 0 359 0; loop: true; dur: 5000; easing: linear" holo-material></a-entity>
+			<a-entity id="obj-hubble" position="0 5 -4" scale="1 1 1"  rotation="-125 0 0">
+				<a-entity scale="0.5 0.5 0.5"  gltf-model="#hubble" animation="property: rotation; to: 0 360 0; loop: true; dur: 15000; easing: linear" holo-material></a-entity>
 			</a-entity>
 
 			<!-- iss -->
-			<a-entity id="obj-iss" position="0 5 -7" scale="0.5 0.5 0.5"  rotation="-125 0 0">
-				<a-entity scale="0.2 0.2 0.2"  gltf-model="#iss" animation="property: rotation; to: 0 360 0; loop: true; dur: 5000; easing: linear" holo-material></a-entity>
+			<a-entity id="obj-iss" position="0 5 -4" scale="0.8 0.8 0.8"  rotation="-125 0 0">
+				<a-entity scale="0.2 0.2 0.2"  gltf-model="#iss" animation="property: rotation; to: 0 360 0; loop: true; dur: 15000; easing: linear" holo-material></a-entity>
 			</a-entity>
 
 		</a-entity>
