@@ -2,6 +2,9 @@
 
 <head>
 	<script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@3f0df33946cf12e3d552b3b4e500dd5b8ff6f692/dist/aframe-master.min.js"></script>
+	
+	<script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-particle-system-component@1.2.0/dist/aframe-particle-system-component.min.js"></script>
+	<!-- <script src="lib/particles.js"></script> -->
 	<!-- <script src="./aframe142.min.js"></script> -->
 	<script src="lib/aframe-ar.js"></script>
 	<!-- <script src="aframe-extra.min.js"></script> -->
@@ -17,17 +20,18 @@
 
 <body style='margin : 0px; overflow: hidden; font-family: Monospace;'>
 
+</body>
 
-	<div class="visible">
-		<div class="logo"><img src="images/logo.png"></div>
-		<div id="language">FR-<u>EN</u></div>
-		<script>
-			document.getElementById('language').addEventListener('click', function () {
-				console.log('tapped')
-				if (document.getElementById('language').innerHTML == 'FR-<u>EN</u>') document.getElementById('language').innerHTML = '<u>FR</u>-EN';
-				else if (document.getElementById('language').innerHTML == '<u>FR</u>-EN') document.getElementById('language').innerHTML = 'FR-<u>EN</u>';
-				changeInstr();
-			}, false);
+<div class="visible">
+	<div class="logo"><img src="images/logo.png"></div>
+	<div id="language">FR-<u>EN</u></div>
+	<script>
+		document.getElementById('language').addEventListener('click', function () {
+			console.log('tapped')
+			if (document.getElementById('language').innerHTML == 'FR-<u>EN</u>') document.getElementById('language').innerHTML = '<u>FR</u>-EN';
+			else if (document.getElementById('language').innerHTML == '<u>FR</u>-EN') document.getElementById('language').innerHTML = 'FR-<u>EN</u>';
+			changeInstr();
+		}, false);
 		</script>
 		<div id="target"><img src="images/target.gif" alt="" srcset=""></div>
 		<div id="bottom">
@@ -40,23 +44,24 @@
 					if (document.getElementById('language').innerHTML == '<u>FR</u>-EN') document.getElementById('text').innerText = "Visez le pictogramme sur la vidéo pour faire apparaître l'objet en version holographique sur votre téléphone."
 					if (document.getElementById('language').innerHTML == 'FR-<u>EN</u>') document.getElementById('text').innerText = "Aim your phone at the pictogram on the video to make a holographic version of the object appear."
 				}
-			</script>
+				</script>
 		</div>
 	</div>
-
-
-
-
+	
+	
+	
+	
 	<!-- <a-entity light="type: ambient; color: #BBB"></a-entity> -->
 	<!-- <a-entity light="type: directional; color: #FFF; intensity: 0.6" position="-0.5 1 1"></a-entity> -->
-
-
-
-
-
+	
+	
+	
+	
+	
 	<a-scene id='scene' embedded arjs='sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3;' renderer='precision: high;'>
-
-
+		
+		<!-- <a-entity particles="texture: /assets/blob.png; color: blue; velocity: 0 10 0; velocity-spread: 2 0 2; acceleration: 0 -10 0"></a-entity> -->
+		
 		<a-assets>
 			<a-asset-item id="astronaut" src="models/astronaut.glb"></a-asset-item>
 			<a-asset-item id="dragon" src="models/dragon.glb"></a-asset-item>
@@ -64,7 +69,7 @@
 			<a-asset-item id="iss" src="models/iss.glb"></a-asset-item>
 			<a-asset-item id="starliner" src="models/starliner.glb"></a-asset-item>
 			<!-- <a-cubemap id="reflection"> -->
-			<!-- <img src="cubemap/px.jpg"> -->
+				<!-- <img src="cubemap/px.jpg"> -->
 			<!-- <img src="cubemap/nx.jpg"> -->
 			<!-- <img src="cubemap/py.jpg"> -->
 			<!-- <img src="cubemap/ny.jpg"> -->
@@ -73,6 +78,12 @@
 			<!-- </a-cubemap> -->
 			<!-- <img id="sky" src="background.jpg"> -->
 		</a-assets>
+
+		<!-- Particles -->
+		<a-sphere rotation="180 0 0" scale="100 100 100" material="side:double;shader:flat;transparent:true;flatShading:true" src="./images/tex_sphere.png"></a-sphere>>
+		<a-entity position="0 0 0" particle-system="preset: dust; size:1.5; particleCount:1000; velocityValue:0 0 0"></a-entity>
+
+		<a-plane  position="0 2.25 -15" color="#1F1F1F" height="2" width="2" material="opacity:0.5; blending:"></a-plane>
 
 		<!-- world pos -->
 		<a-entity id="all" position='0 0 0' rotation="90 0 0">
