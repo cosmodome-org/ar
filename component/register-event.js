@@ -6,6 +6,9 @@ AFRAME.registerComponent('register-events', {
         function show(id, visible) {
             document.getElementById(id).setAttribute('visible', visible);
         }
+        function showDOM(id, visible) {
+            document.getElementById(id).style.display = visible? 'block' : 'none';
+        }
         function title(text) {
             document.getElementById('title').innerHTML = text;
         }
@@ -27,8 +30,8 @@ AFRAME.registerComponent('register-events', {
         marker.addEventListener('markerFound', function () {
             if (language == 'FR') instr("Bravo tu l'as débloqué! \nRetourne toi et trouve le derrière toi dans le ciel.");
             else if (language == 'EN') instr("Congrats, you just unlocked it! \nPoint your phone behind you in the sky and find it.");
-            show('instr', true);
-            setTimeout(() => show('instr', false), 5000)
+            showDOM('instr', true);
+            setTimeout(() => showDOM('instr', false), 5000)
             if (document.getElementById('language').innerHTML == '<u>FR</u>-EN') language = 'FR';
             else if (document.getElementById('language').innerHTML == 'FR-<u>EN</u>') language = 'EN';
             var markerId = marker.id;
