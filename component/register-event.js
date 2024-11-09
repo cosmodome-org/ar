@@ -4,13 +4,16 @@ AFRAME.registerComponent('register-events', {
         var marker = this.el;
         var language;
         function show(id, visible) {
-            document.getElementById(id).setAttribute('visible', visible) ;
+            document.getElementById(id).setAttribute('visible', visible);
         }
         function title(text) {
             document.getElementById('title').innerHTML = text;
         }
         function text(text) {
             document.getElementById('text').innerHTML = text;
+        }
+        function instr(text) {
+            document.getElementById('instr').innerHTML = text;
         }
         function hideAll() {
             show('obj-dragon', false);
@@ -20,17 +23,21 @@ AFRAME.registerComponent('register-events', {
             show('obj-iss', false);
         }
         hideAll();
-       
+
         marker.addEventListener('markerFound', function () {
+            if (language == 'FR') instr("Bravo tu l'as débloqué! \nRetourne toi et trouve le derrière toi dans le ciel.");
+            else if (language == 'EN') instr("Congrats, you just unlocked it! \nPoint your phone behind you in the sky and find it.");
+            show('instr', true);
+            setTimeout(() => show('instr', false), 5000)
             if (document.getElementById('language').innerHTML == '<u>FR</u>-EN') language = 'FR';
             else if (document.getElementById('language').innerHTML == 'FR-<u>EN</u>') language = 'EN';
             var markerId = marker.id;
             console.log('markerFound', markerId);
-            console.log('language : ' + language);   
+            console.log('language : ' + language);
             document.getElementById('target').style.display = 'none';
             document.getElementById('bottom').style.display = 'block';
             if (markerId == 'marker-astronaut') {
-                hideAll();  
+                hideAll();
                 show('obj-astronaut', true);
                 if (language == 'FR') title('Astronaute');
                 else if (language == 'EN') title('Astronaut');

@@ -67,8 +67,26 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
-#target img{
+
+#target img {
     width: 200px;
     height: 200px;
     opacity: 1;
+}
+
+#instr {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+    background-color: #002A3D;
+    padding: 0.6rem;
+    width: 75vw;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    display: none;
+
 }
