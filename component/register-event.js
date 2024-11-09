@@ -28,12 +28,12 @@ AFRAME.registerComponent('register-events', {
         hideAll();
 
         marker.addEventListener('markerFound', function () {
-            if (language == 'FR') instr("Bravo tu l'as débloqué! \nRetourne toi et trouve le derrière toi dans le ciel.");
-            else if (language == 'EN') instr("Congrats, you just unlocked it! \nPoint your phone behind you in the sky and find it.");
-            showDOM('instr', true);
             setTimeout(() => showDOM('instr', false), 5000)
             if (document.getElementById('language').innerHTML == '<u>FR</u>-EN') language = 'FR';
             else if (document.getElementById('language').innerHTML == 'FR-<u>EN</u>') language = 'EN';
+            if (language == 'FR') instr("Bravo tu l'as débloqué! Retourne toi et trouve le derrière toi dans le ciel.");
+            else if (language == 'EN') instr("Congrats, you just unlocked it! Point your phone behind you in the sky and find it.");
+            showDOM('instr', true);
             var markerId = marker.id;
             console.log('markerFound', markerId);
             console.log('language : ' + language);
