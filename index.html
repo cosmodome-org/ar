@@ -26,7 +26,7 @@
 <div class="visible">
 	<div class="logo"><img src="images/logo.png"></div>
 	<div id="language">FR-<u>EN</u></div>
-	<div id="instr">Bravo tu l'as débloqué! \nRetourne toi et trouve le derrière toi dans le ciel.</div>
+	<div id="instr">Aim your phone at the pictogram on the video to make a holographic version of the object appear.</div>
 	<script>
 		document.getElementById('language').addEventListener('click', function () {
 			console.log('tapped')
@@ -43,8 +43,8 @@
 				changeInstr();
 				function changeInstr() {
 					document.getElementById('title').innerText = '';
-					if (document.getElementById('language').innerHTML == '<u>FR</u>-EN') document.getElementById('text').innerText = "Visez le pictogramme sur la vidéo pour faire apparaître l'objet en version holographique sur votre téléphone."
-					if (document.getElementById('language').innerHTML == 'FR-<u>EN</u>') document.getElementById('text').innerText = "Aim your phone at the pictogram on the video to make a holographic version of the object appear."
+					if (document.getElementById('language').innerHTML == '<u>FR</u>-EN') document.getElementById('instr').innerText = "Visez le pictogramme sur la vidéo pour faire apparaître l'objet en version holographique sur votre téléphone."
+					if (document.getElementById('language').innerHTML == 'FR-<u>EN</u>') document.getElementById('instr').innerText = "Aim your phone at the pictogram on the video to make a holographic version of the object appear."
 				}
 				</script>
 		</div>

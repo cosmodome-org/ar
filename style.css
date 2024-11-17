@@ -63,7 +63,7 @@
 
 #target {
     position: fixed;
-    top: 50%;
+    top: 73%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -87,6 +87,6 @@
     text-align: center;
     border-radius: 10px;
     font-size: 0.8rem;
-    display: none;
+    display: block;
 
 }
