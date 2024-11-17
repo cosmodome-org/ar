@@ -57,7 +57,7 @@ AFRAME.registerComponent('holo-material', {
 
             this.el.getObject3D('mesh').traverse(node => {
                 if (node.isMesh) {
-                    console.log('isMeshed');
+                    // console.log('isMeshed');
                     node.material.dispose();
                     node.material = holoMaterial3;
                 }
