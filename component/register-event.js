@@ -7,7 +7,7 @@ AFRAME.registerComponent('register-events', {
             document.getElementById(id).setAttribute('visible', visible);
         }
         function showDOM(id, visible) {
-            document.getElementById(id).style.display = visible? 'block' : 'none';
+            document.getElementById(id).style.display = visible ? 'block' : 'none';
         }
         function title(text) {
             document.getElementById('title').innerHTML = text;
@@ -28,17 +28,20 @@ AFRAME.registerComponent('register-events', {
         hideAll();
 
         marker.addEventListener('markerFound', function () {
-            setTimeout(() => showDOM('instr', false), 5000)
             if (document.getElementById('language').innerHTML == '<u>FR</u>-EN') language = 'FR';
             else if (document.getElementById('language').innerHTML == 'FR-<u>EN</u>') language = 'EN';
             if (language == 'FR') instr("Bravo tu l'as débloqué! Retourne toi et trouve le derrière toi dans le ciel.");
             else if (language == 'EN') instr("Congrats, you just unlocked it! Point your phone behind you in the sky and find it.");
-            showDOM('instr', true);
             var markerId = marker.id;
             console.log('markerFound', markerId);
             console.log('language : ' + language);
-            document.getElementById('target').style.display = 'none';
-            document.getElementById('bottom').style.display = 'block';
+            
+            showDOM('instr', true);
+            showDOM('target', false);
+            showDOM('bottom', true);
+            setTimeout(() => showDOM('target', true), 15000);
+            setTimeout(() => showDOM('instr', false), 5000)
+
             if (markerId == 'marker-astronaut') {
                 hideAll();
                 show('obj-astronaut', true);
