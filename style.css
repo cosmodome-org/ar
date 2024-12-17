@@ -63,7 +63,7 @@
 
 #target {
     position: fixed;
-    top: 73%;
+    top: 80%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
