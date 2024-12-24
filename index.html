@@ -77,7 +77,7 @@
 
 
 
-<a-scene id='scene' embedded arjs='sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3;' renderer='precision: high;'>
+<a-scene id='scene' embedded arjs='sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3; sourceWidth:1280; sourceHeight:960; displayWidth:1280; displayHeight:960' renderer='precision: high;'>
 
 	<!-- <a-entity particles="texture: /assets/blob.png; color: blue; velocity: 0 10 0; velocity-spread: 2 0 2; acceleration: 0 -10 0"></a-entity> -->
 
@@ -91,7 +91,7 @@
 	</a-assets>
 
 	<!-- Particles -->
-	<a-sphere rotation="180 0 0" scale="200 200 200" material="side:double;shader:flat;transparent:true;flatShading:true;opacity:0.8" src="./images/tex_sphere.png"></a-sphere>>
+	<a-sphere rotation="180 0 0" scale="200 200 200" material="side:double;shader:flat;transparent:true;flatShading:true;opacity:0.6" src="./images/tex_sphere.png"></a-sphere>>
 	<a-entity position="0 0 0" particle-system="preset: dust; size:1.5; particleCount:1000; velocityValue:0 0 0" material="blending:additive"></a-entity>
 
 
